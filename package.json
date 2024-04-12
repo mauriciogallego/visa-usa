@@ -1,0 +1,29 @@
+{
+  "name": "visa-usa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "create-env": "printenv | grep -iv 'npm_*' > .env",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "next-lint": "next lint",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run --browser chrome",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": "8.x"
+  },
+  "dependencies": {
+    "cypress": "^13.7.0",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  }
+}
