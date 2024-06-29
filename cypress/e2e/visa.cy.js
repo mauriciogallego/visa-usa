@@ -66,8 +66,8 @@ describe('template spec', () => {
   beforeEach('get access', () => {
     cy.visit('https://ais.usvisa-info.com/en-co/niv/users/sign_in');
 
-    cy.get(`[id="user_email"]`).type('olgalle4@hotmail.com');
-    cy.get(`[id="user_password"]`).type('Chita*1521');
+    cy.get(`[id="user_email"]`).type('');
+    cy.get(`[id="user_password"]`).type('');
     cy.get('[for="policy_confirmed"]').click();
 
     cy.get(`[value="Sign In"]`).click();
