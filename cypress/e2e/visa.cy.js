@@ -1,10 +1,17 @@
 describe('template spec', () => {
-  const year = '2024';
-  const month = 'November';
+  const year = '2025';
+  const month = 'February';
 
   const process = () => {
     cy.visit(
       'https://ais.usvisa-info.com/en-co/niv/schedule/56491443/appointment',
+      {
+        headers: {
+          accept: 'application/json, text/plain, */*',
+          'User-agent':
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
+        },
+      },
     );
 
     cy.get('[id="appointments_consulate_appointment_date"]').click();
@@ -64,10 +71,18 @@ describe('template spec', () => {
   };
 
   beforeEach('get access', () => {
-    cy.visit('https://ais.usvisa-info.com/en-co/niv/users/sign_in');
+    cy.visit('https://ais.usvisa-info.com/en-co/niv/users/sign_in', {
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'User-agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
+      },
+    });
 
-    cy.get(`[id="user_email"]`).type('');
-    cy.get(`[id="user_password"]`).type('');
+    cy.get(`[id="user_email"]`).type('olgalle4@hotmail.com');
+    // COLOCAR LA CONTRASEÑA AQUI       |||
+    //                                  VVV
+    cy.get(`[id="user_password"]`).type(' ');
     cy.get('[for="policy_confirmed"]').click();
 
     cy.get(`[value="Sign In"]`).click();
